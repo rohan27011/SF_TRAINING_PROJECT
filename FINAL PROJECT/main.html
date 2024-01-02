@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SALEFORCE PROJECT</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./main.css">
+  </head>
+  <body>
+    <nav>
+      <h1>INTELLISHIFT TRAINING</h1>
+      <ul>
+        <li><a href="../../main.html">Home</a></li>
+        <li><a href="/components/popular/popular.html">Popular Movies</a></li>
+        <li><a href="/components/top_rated/top_rated.html">Top Rated Movies</a></li>
+        <li><a href="/components/trending/trending.html">Trending Movies</a></li>
+        <li><a href="/components/up_coming/up_coming.html">Up Coming Movies</a></li>
+      </ul>
+    </nav>
+
+    <main class="ui container">
+      <section id="filter-container">
+        <label for="search-input">Search Here:</label>
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Enter movie title or cast name"
+        />
+
+        <label>Filtering by Region:</label>
+        <label>
+          <input type="radio" name="movie-filter" value="data.movies" checked />
+          HOLLYWOOD
+        </label>
+        <label>
+          <input type="radio" name="movie-filter" value="data.hindiMovies" />
+          BOLLYWOOD
+        </label>
+        <label>
+          <input type="radio" name="movie-filter" value="All" />
+          ALL
+        </label>
+
+        <label for="release-year">Release Year Decade:</label>
+        <select name="release-year" id="release-year">
+          <option value="">Any</option>
+          <option value="1950">1950 - 1959</option>
+          <option value="1960">1960 - 1969</option>
+          <option value="1970">1970 - 1979</option>
+          <option value="1980">1980 - 1989</option>
+          <option value="1990">1990 - 1999</option>
+          <option value="2000">2000 - 2009</option>
+          <option value="2010">2010 - 2019</option>
+          <option value="2020">2020 - 2023</option>
+        </select>
+
+        <label for="genres">Genres:</label>
+        <select name="genres" id="genres">
+          <option value="">Any</option>
+          <option value="action">Action</option>
+          <option value="comedy">Comedy</option>
+          <option value="Drama">Drama</option>
+          <option value="Thriller">Thriller</option>
+          <option value="Adventure">Adventure</option>
+          <option value="Science Fiction">Science Fiction</option>
+          <option value="Animation">Animation</option>
+          <option value="Family">Family</option>
+          <option value="Mystery">Mystery</option>
+          <option value="Music">Music</option>
+          <option value="Horror">Horror</option>
+          <option value="Fantasy">Fantasy</option>
+          <option value="Romance">Romance</option>
+        </select>
+
+        <label for="sort-by-year">Sort By Year:</label>
+        <select name="sort-by-year" id="sort-by-year">
+          <option value="newest">Newest First</option>
+          <option value="oldest">Oldest First</option>
+        </select>
+      </section>
+      <button class="btn btn-primary" onclick="getMovieInformation()">
+        Get Movie Information
+      </button>
+      <hr />
+      <div id="content" class="card-container"></div>
+    </main>
+    <script src="./main.js"></script>
+  </body>
+</html>

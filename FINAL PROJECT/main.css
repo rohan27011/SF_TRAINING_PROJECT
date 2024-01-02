@@ -1,0 +1,143 @@
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    margin: 0;
+    padding: 60px;
+    background-color: #21044f;
+  }
+
+  nav {
+    background-color: #7246b9;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #fff;
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  nav li {
+    margin-right: 40px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .ui.container {
+    background-color: #535aea;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+  }
+  #filter-container {
+    background-color: #dfe8eb;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+
+  input[type="radio"] {
+    margin-right: 30px;
+  }
+
+  button.ui.button.primary {
+    background-color: #032546;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  button.ui.button.primary:hover {
+    background-color: #3f2f79;
+  }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .card {
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    box-sizing: border-box;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  .image {
+    overflow: hidden;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  .image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .content {
+    padding: 16px;
+  }
+
+  .header {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .meta a {
+    color: #555;
+    text-decoration: none;
+  }
+
+  .description {
+    color: #777;
+    line-height: 1.4;
+  }
