@@ -20,7 +20,6 @@ import("./src/moviesPlay.js").then((res) => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Get the radio buttons and add an event listener
   var radioButtons = document.getElementsByName("movie-filter");
   var releaseYearSelect = document.getElementById("release-year");
   var genresSelect = document.getElementById("genres");
@@ -32,8 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
   radioButtons.forEach(function (radioButton) {
     radioButton.addEventListener("change", handleFilterChange);
   });
-
-  // Function to handle radio button change
   function handleFilterChange() {
     var selectedValue = getSelectedRadioValue("movie-filter");
     console.log(selectedValue);
@@ -57,9 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
         profilePath: castMember.profilePath,
       })),
     }));
-
-
-    // Function to filter movies by search input
     function updateFilteredMovies() {
       const selectedDecade = releaseYearSelect.value;
       const searchTerm = searchInput.value.toLowerCase().trim();
@@ -94,33 +88,20 @@ document.addEventListener("DOMContentLoaded", function () {
           )
       );
     }
-
-    //event listeners to trigger filtering on input change
     document
       .getElementById("release-year")
       .addEventListener("change", updateFilteredMovies);
     document
       .getElementById("search-input")
       .addEventListener("input", updateFilteredMovies);
-
-    // Initial call to display all movies
     updateFilteredMovies();
-
-
-    // Function to filter movies by release year decade
     function filterMoviesByDecade(selectedDecade) {
       if (selectedDecade === "") {
-        // "Any" is selected, return all movies
+     
         return newArray;
       }
-
-      //the start year of the selected decade
       const startYear = parseInt(selectedDecade, 10);
-
-      // the end year of the selected decade
       const endYear = startYear + 9;
-
-      // use filter to get movies within the selected decade
       const filteredMovies = newArray.filter((movie) => {
         const movieYear = new Date(movie.releaseDate).getFullYear();
         return movieYear >= startYear && movieYear <= endYear;
@@ -133,7 +114,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function filterMoviesByGenres(selectedGenres, movies) {
       if (selectedGenres === "") {
-        //"Any" is selected, return all movies
         return filteredMoviesbyYear;
       }
       return movies.filter((movie) =>
@@ -147,8 +127,6 @@ document.addEventListener("DOMContentLoaded", function () {
     filteredMovies = filterMoviesByGenres(selectedGenres, filteredMovies);
 
   }
-
-  // Function to get the value of the selected radio button
   function getSelectedRadioValue(name) {
     var selectedValue = null;
     var radioButtons = document.getElementsByName(name);
@@ -164,8 +142,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function run() {}
-
-// ----------------movie card-----------------
 
 function getMovieInformation() {
   const fetchArray = filteredMovies.map((movieId) => {
@@ -187,10 +163,10 @@ function getMovieInformation() {
     });
     console.log(moviesInfo);
     if (moviesInfo.length === 0) {
-      // No movies found, display a message
+    
       document.getElementById("content").innerHTML = "<p>No movies found.</p>";
     } else {
-      // Sort movies based on the selected option in the sort-by-year dropdown
+   
       const sortByYearOption = document.getElementById("sort-by-year").value;
       if (sortByYearOption === "newest") {
         moviesInfo.sort(
